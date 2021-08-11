@@ -30,5 +30,17 @@ def rotate_an_array(number_of_array: list):
     return number_of_array
 
 
+def rotate_an_array2(number_of_array: list):
+    last_index = len(number_of_array) - 1
+    last_item = number_of_array[last_index]
+
+    for item_index in range(last_index, 0, -1):
+        number_of_array[item_index] = number_of_array[item_index - 1]
+
+    number_of_array[0] = last_item
+    return number_of_array
+
+
 if __name__ == "__main__":
     print(rotate_an_array([1, 2, 3, 4, 5]))
+    print(rotate_an_array2([1, 2, 3, 4, 5]))
